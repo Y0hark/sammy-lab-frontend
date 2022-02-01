@@ -44,9 +44,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
-
-	'@nuxtjs/markdownit',
+    '@nuxtjs/pwa'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -64,7 +62,10 @@ export default {
     preset: 'default',
     linkify: true,
     breaks: true,
-	runtime: true
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ]
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

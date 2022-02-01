@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<!-- component images viewer -->
-		<div v-for="(component, key) in component" :key="key">
+		<div v-for="(component, key) in content" :key="key">
 			<v-card-text
 				v-if="component.__component == 'editor-components.images'"
 				class="d-none d-md-block"
@@ -33,16 +33,25 @@
 				</v-carousel>
 			</v-card-text>
 			<!-- component text viewer -->
-			<v-card-text v-if="component.__component == 'editor-components.text'" v-html="component.text" />
-				
+			<div v-if="component.__component == 'editor-components.text'">
+				# Test <br/>
+				{{ micromark(component.text) }}
+			</div>
 		</div>
 	</div>
 </template>
 <script>
+import micromark from 'micromark'
+
 export default {
 	props: {
-		component: [],
+		content: [],
 	},
+	components: { 
+	},
+	mounted() {
+		console.log(micromark(content.components[0].text))
+	}
 }
 </script>
 <style>

@@ -8,7 +8,7 @@
 				{{ homepage.description }}
 			</v-card-text>
 
-			<ComponentViewer :component="homepage.component" />
+			<ComponentViewer :content="homepage.content" />
 		</v-card>
 
 		<!-- Short description -->

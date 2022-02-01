@@ -4,7 +4,7 @@
 			<v-card-text>
 				<h2>{{ discoverme.title }}</h2>
 			</v-card-text>
-			<ComponentViewer :component="discoverme.components" />
+			<ComponentViewer :content="discoverme.content" />
 		</v-card>
 
 		<!-- Contacts -->

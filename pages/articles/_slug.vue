@@ -4,7 +4,7 @@
 			<span>{{ article.title }}</span> <span>{{ category }}</span>
 		</v-card-text>
 		<v-divider class="mb-6"/>
-			<ComponentViewer :component="article.component" />
+			<ComponentViewer :content="article.content" />
 	</v-container>
 </template>
 <script>
