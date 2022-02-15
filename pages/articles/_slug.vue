@@ -1,10 +1,16 @@
 <template>
-	<v-container max-width="80vw">
-		<v-card-text class="mt-16">
-			<span>{{ article.title }}</span> <span>{{ category }}</span>
-		</v-card-text>
-		<v-divider class="mb-6"/>
-			<ComponentViewer :content="article.content" />
+	<v-container class=".col-md-6 .offset-md-3">
+		<v-row no-gutters>
+			<v-col
+				md="6"
+				offset-md="3"
+			>
+				<v-card-text class="mt-16" align="center">
+					Écrit par <span>{{ writer }}</span> le <span>{{ article }}</span>
+				</v-card-text>
+				<ComponentViewer :content="article.content" />
+			</v-col>
+		</v-row>
 	</v-container>
 </template>
 <script>
@@ -21,6 +27,7 @@ export default {
 		return {
 			article: {},
 			category: '',
+			writer: '',
 			loading: true,
 		}
 	},
@@ -30,6 +37,7 @@ export default {
 				await getArticlePromise(this.$route.params.slug)
 			).data[0]
 			this.category = this.article.category.name
+			this.writer = this.article.writer.name + this.article.writer.surname
 			this.loading = false
 		} catch (error) {
 			console.error(
