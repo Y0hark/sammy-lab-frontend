@@ -1,13 +1,18 @@
 <template>
-	<v-container>
-		<v-card>
-			<v-card-text>
-				<h2>{{ discoverme.title }}</h2>
-			</v-card-text>
-			<ComponentViewer :content="discoverme.content" />
-		</v-card>
+	<v-container class=".col-md-6 .offset-md-3">
+		<v-row no-gutters>
+			<v-col
+				md="6"
+				offset-md="3"
+			>
+				<h2 align="center">{{ discoverme.title }}</h2>
+				<v-card>
+					<ComponentViewer :content="discoverme.content" />
+				</v-card>
 
 		<!-- Contacts -->
+			</v-col>
+		</v-row>
 	</v-container>
 </template>
 <script>

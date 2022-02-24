@@ -6,7 +6,7 @@
 				offset-md="3"
 			>
 				<v-card-text class="mt-16" align="center">
-					Écrit par <span>{{ writer }}</span> le <span>{{ article }}</span>
+					Écrit par <span>{{ writer }}</span> le <span>{{ article.publication_date }}</span>
 				</v-card-text>
 				<ComponentViewer :content="article.content" />
 			</v-col>
@@ -33,12 +33,13 @@ export default {
 	},
 	async mounted() {
 		try {
-			this.article = (
+			const article = (
 				await getArticlePromise(this.$route.params.slug)
 			).data[0]
-			this.category = this.article.category.name
-			this.writer = this.article.writer.name + this.article.writer.surname
+			this.category = article.category.name
+			this.writer = article.writer.name + " " + article.writer.surname
 			this.loading = false
+			this.article = article
 		} catch (error) {
 			console.error(
 				'Impossible to get the article. Got this error: ' + error
