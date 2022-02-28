@@ -1,9 +1,11 @@
 <template>
-	<v-container class=".col-md-6 .offset-md-3">
+	<v-container>
 		<v-row no-gutters>
 			<v-col
-				md="6"
-				offset-md="3"
+				lg="8"
+				offset-lg="2"
+				xl="6"
+				offset-xl="3"
 			>
 				<v-card-text class="mt-16" align="center">
 					Écrit par <span>{{ writer }}</span> le <span>{{ article.publication_date }}</span>

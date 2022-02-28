@@ -38,7 +38,7 @@
 			<template v-slot:activator="{on, attrs}">
 				<v-btn :to="item.link" v-bind="attrs" v-on="on" elevation="0" class="ma-2">
 					<v-img width="25px" height="auto" class="mr-1" :src="require(`~/assets/images/${item.icon}.png`)" />
-					{{ item.name }}
+					<span class="d-md-flex">{{ item.name }}</span>
 				</v-btn>
 			</template>
 			<span>{{ item.tooltip }}</span>
@@ -63,14 +63,14 @@ export default {
 	data() {
 		return {
 			menuItems: [
-				{ name: "Articles", link: "/articles", icon: "nav-blog", tooltip: "see my latest articles" },
-				{ name: "My Projects", link: "/projects", icon: "nav-projects", tooltip: "take a look at my projects" },
-				{ name: "Discover.me", link: "/discoverme", icon: "nav-floppy", tooltip: "find my infos"}
+				{ name: "Articles", link: "/articles", icon: "nav-blog", tooltip: "voir mes articles" },
+				{ name: "Mes Projets", link: "/projects", icon: "nav-projects", tooltip: "mes projets" },
+				{ name: "Discover.me", link: "/discoverme", icon: "nav-floppy", tooltip: "qui je suis"}
 			],
 			menuIcons: [
-				{ name: "Search", link: "", icon: "nav-search", tooltip: "look for something" },
-				{ name: "Twitter", link: "https://twitter.com/Sammysterieux", icon: "nav-twitter", tooltip: "find me on twitter" },
-				{ name: "GitHub", link: "https://github.com/Y0hark", icon: "nav-github", tooltip: "there goes my github" },
+				{ name: "Search", link: "", icon: "nav-search", tooltip: "cherche un article/sujet" },
+				{ name: "Twitter", link: "https://twitter.com/Sammysterieux", icon: "nav-twitter", tooltip: "retrouve moi sur twitter" },
+				{ name: "GitHub", link: "https://github.com/Y0hark", icon: "nav-github", tooltip: "mon github" },
 			]
 		}
 	},
