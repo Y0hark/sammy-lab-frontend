@@ -69,7 +69,7 @@ export default class Api {
 	// homepage api
 
 	static async getHomePage() {
-		return await Http.get("homepage")
+		return await Http.get("home")
 	}
 
 	// tweets api
