@@ -14,6 +14,7 @@ export default {
 		articles: []
 	},
 	methods: { 
+		// setting date in a more readable format
 		readableDate(date) {
 			date = new Date(date)
 			return date.getDay() + " " + date.toLocaleString('default', { month: 'long' })
