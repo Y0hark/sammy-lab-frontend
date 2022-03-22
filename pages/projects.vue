@@ -21,23 +21,26 @@
 					align="center"
 					
 					>
+						<!-- TODO - Samuel GALIERE : need CSS on these lines to get to a better overall view of the project -->
 						<v-card>
 							<v-card-text>
 								{{ project.title }}
 							</v-card-text>
-							<v-card-text>
-								{{ project.thumbnail }}
+							<v-card-text v-if="project.cover">
+								{{ project.cover }}
 							</v-card-text>
 							<v-card-text>
 								{{ project.description }}
 							</v-card-text>
 							<v-card-text>
-								{{ project.tags }}
+								<!-- TODO - Samuel GALIERE : Need CSS to make tags and links look better -->
+								<span v-for="tag in project.tags" :key="tag.id" cl>{{ tag.name }} </span>
 							</v-card-text>
 							<v-card-text>
-								<v-btn v-if="project.link" color="success" :to="project.link">{{ project.title }}</v-btn>
-								<v-btn v-if="project.git" color="success" :to="project.git">{{ project.gitName }}</v-btn>
-								<v-btn v-if="project.article" color="success" :to="project.article">Read more</v-btn>
+								<!-- TODO - Samuel GALIERE : Need CSS to make tags and links look better -->
+								<v-btn v-if="project.link" color="secondary" :to="project.link">{{ project.title }}</v-btn>
+								<v-btn v-if="project.git" color="secondary" :to="project.git">GitHub</v-btn>
+								<v-btn v-if="project.article" color="secondary" :to="project.article">Read more</v-btn>
 							</v-card-text>
 						</v-card>
 					</v-col>
@@ -47,12 +50,28 @@
 	</v-container>
 </template>
 <script>
+import Api from "../services/api/api.js"
+
+// preparing function to retrieve projects correctly
+
+async function getProjectsPromise() {
+	return await Api.getProjects()
+}
+
 export default {
 	data() {
 		return {
-			projects: []
+			projects: [],
+			tags: []
 		}
 	},
+	async mounted() {
+		try {
+			this.projects = (await getProjectsPromise()).data
+		} catch (error) {
+			console.error(`Couldn't get the project list. Got this error: ${error}`)
+		}
+	}
 }
 </script>
 <style>

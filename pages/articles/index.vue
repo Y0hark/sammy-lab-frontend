@@ -1,5 +1,5 @@
 <template>
-	<v-container class=".col-md-6 .offset-md-3">
+	<v-container>
 		<v-row no-gutters>
 			<v-col
 				md="6"

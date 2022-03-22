@@ -85,4 +85,10 @@ export default class Api {
 	static async getTweetsCount() {
 		return await Http.get("tweets/count")
 	}
+
+	// projects api
+
+	static async getProjects() {
+		return await Http.get("projects")
+	}
 }

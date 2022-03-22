@@ -5,10 +5,10 @@
 				md="6"
 				offset-md="3"
 			>
-				<h2 align="center">{{ discoverme.title }}</h2>
-				<v-card>
-					<ComponentViewer :content="discoverme.content" />
-				</v-card>
+				<h2 align="center" class="mt-10">{{ discoverme.title }}</h2>
+				<br>
+
+				<ComponentViewer :content="discoverme.content" />
 
 		<!-- Contacts -->
 			</v-col>

@@ -1,21 +1,17 @@
 <template>
-	<v-container>
-		<v-card>
-			<v-card-text>
-				<h1>{{ homepage.title }}</h1>
-			</v-card-text>
-			<v-card-text>
-				{{ homepage.description }}
-			</v-card-text>
+	<v-container class=".col-md-6 .offset-md-3">
+		<v-row no-gutters>
+			<v-col
+				md="6"
+				offset-md="3"
+			>
+				<h1 align="center" class="mt-10">{{ homepage.title }}</h1>
+				<br>
 
 			<ComponentViewer :content="homepage.content" />
-		</v-card>
 
-		<!-- Short description -->
-
-		<!-- Flashy well designed news -->
-
-		<!-- Homepage Content -->
+			</v-col>
+		</v-row>
 	</v-container>
 </template>
 <script>
@@ -34,7 +30,11 @@ export default {
 		}
 	},
 	async mounted() {
-		this.homepage = (await getHomepagePromise()).data
+		try {
+			this.homepage = (await getHomepagePromise()).data
+		} catch (error) {
+			console.error(`Couldn't get homepage content. Got this error: ${error}`)
+		}
 	},
 }
 </script>
