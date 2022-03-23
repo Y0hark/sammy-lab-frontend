@@ -1,19 +1,12 @@
 <template>
-	<v-container class=".col-md-6 .offset-md-3">
-		<v-row no-gutters>
-			<v-col
-				md="6"
-				offset-md="3"
-			>
-				<h2 align="center" class="mt-10">{{ discoverme.title }}</h2>
-				<br>
+	<div>
+		<h2 align="center" class="mt-10">{{ discoverme.title }}</h2>
+		<br />
 
-				<ComponentViewer :content="discoverme.content" />
+		<ComponentViewer :content="discoverme.content" />
 
 		<!-- Contacts -->
-			</v-col>
-		</v-row>
-	</v-container>
+	</div>
 </template>
 <script>
 import ComponentViewer from '../components/ComponentViewer.vue'

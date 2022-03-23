@@ -1,29 +1,6 @@
 <template>
 	<div>
-		<!-- <v-navigation-drawer
-		app left width="90px" fixed permanent
-	>
-		<v-list
-		nav
-		dense
-		>
-			<v-list-item v-for="(item, key) in menuItems" :key="key">
-				<v-tooltip right>
-					<template v-slot:activator="{on, attrs}">
-						<v-btn block :to="item.link" v-bind="attrs" v-on="on" >
-							<v-icon>{{ item.icon }}</v-icon>
-						</v-btn>
-					</template>
-					<span>{{ item.name }}</span>
-				</v-tooltip>
-				
-			</v-list-item>
-		</v-list>
-	</v-navigation-drawer> -->
-
 		<v-toolbar>
-			<v-app-bar-nav-icon></v-app-bar-nav-icon>
-
 			<v-toolbar-title>
 				<v-btn to="/" text> Sammy's Lab </v-btn>
 			</v-toolbar-title>
@@ -100,12 +77,6 @@ export default {
 				},
 			],
 			menuIcons: [
-				{
-					name: 'Search',
-					link: '',
-					icon: 'nav-search',
-					tooltip: 'cherche un article/sujet',
-				},
 				{
 					name: 'Twitter',
 					link: 'https://twitter.com/Sammysterieux',
