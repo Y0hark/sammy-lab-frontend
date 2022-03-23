@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2 align="center" class="mt-10">{{ discoverme.title }}</h2>
+		<h2 align="center" class="mt-10 text-h2">{{ discoverme.title }}</h2>
 		<br />
 
 		<ComponentViewer :content="discoverme.content" />

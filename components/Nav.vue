@@ -2,7 +2,7 @@
 	<div>
 		<v-toolbar>
 			<v-toolbar-title>
-				<v-btn to="/" text> Sammy's Lab </v-btn>
+				<v-btn to="/" text class="accent--text">Sammy's Lab</v-btn>
 			</v-toolbar-title>
 
 			<v-spacer></v-spacer>

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2 align="center" class="mt-10">Mes articles</h2>
+		<h2 align="center" class="mt-10 text-h2">Mes articles</h2>
 		<br />
 		<div align="center" class="mb-5">
 			Articles, tutoriels, documentations techniques, revues, rapport,
