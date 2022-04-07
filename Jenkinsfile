@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'node:lastest' } }
+    agent { docker { image 'node:latest' } }
 
     stages {
         stage('Dependencies') {
