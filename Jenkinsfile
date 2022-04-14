@@ -19,7 +19,8 @@ pipeline {
 		stage('SonarQube Analysis') {
 			steps { 
 				withSonarQubeEnv(installationName: 'sonarqube-main', credentialsId: 'SONARQUBE_TOKEN') {
-					sh "sonarqube-main/bin/sonar-scanner"
+					sh "ls ${scannerHome}"
+					sh "echo ${scannerHome}"
 				}
 			}		
 			// 	withSonarQubeEnv(installationName: 'sonarqube-main', credentialsId: 'SONARQUBE_TOKEN') {
