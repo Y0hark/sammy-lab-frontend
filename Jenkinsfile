@@ -24,9 +24,6 @@ pipeline {
 					echo 'SonarQube analysis completed successfully.'
 				}
 			}		
-			// 	withSonarQubeEnv(installationName: 'sonarqube-main', credentialsId: 'SONARQUBE_TOKEN') {
-			// 		sh "npm run build"	
-			// 	}
 		}
         stage('Test') {
             steps {
