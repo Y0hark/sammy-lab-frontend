@@ -2,17 +2,19 @@ pipeline {
     agent any
 
     stages {
-		stage('SonarQube Analysis') {
-			withSonarQubeEnv(installationName: 'sq-main') {
-			sh "sonar-scanner-main/bin/sonar-scanner"
-			}
-		}
         stage('Dependencies') {
             steps {
                 echo 'Retrieving dependencies..'
 				sh 'npm install'
                 echo 'Installation completed successfully.'
             }
+		stage('SonarQube Analysis') {
+			steps {
+				withSonarQubeEnv(installationName: 'sq-main') {
+				sh "sonar-scanner-main/bin/sonar-scanner"
+				}
+			}
+		}
         }
 		// stage('SonarQube Analysis') {
 		// 	steps { 
