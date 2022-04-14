@@ -9,14 +9,15 @@ pipeline {
                 echo 'Installation completed successfully.'
             }
         }
-		node {
-			stage('SonarQube analysis') {
-				def scannerHome = tool name: 'sonar-scanner-main', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
-				withSonarQubeEnv('sq-main') { 
-					sh "${scannerHome}/bin/sonar-scanner"
+		stage('SonarQube analysis') {
+				steps {
+					echo 'Running SonarQube analysis..'
+					withSonarQubeEnv('sq-main') { 
+						sh "/home/yohark/utils/sonarscanner/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner"
+					}
+					echo 'SonarQube analysis completed successfully.'
 				}
 			}
-		}
 		// stage('SonarQube Analysis') {
 		// 	steps { 
 		// 		withSonarQubeEnv(installationName: 'sonarqube-main') {
