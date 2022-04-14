@@ -9,11 +9,11 @@ pipeline {
                 echo 'Installation completed successfully.'
             }
         }
-		stage('SonarQube Analysis') {
-			def scannerHome = tool name: 'sonar-scanner-main', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
-			steps {
-				withSonarQubeEnv(installationName: 'sq-main') {
-				sh "${scannerHome}/bin/sonar-scanner"
+		node {
+			stage('SonarQube analysis') {
+				def scannerHome = tool name: 'sonar-scanner-main', type: 'hudson.plugins.sonar.SonarRunnerInstallation';
+				withSonarQubeEnv('sq-main') { 
+					sh "${scannerHome}/bin/sonar-scanner"
 				}
 			}
 		}
