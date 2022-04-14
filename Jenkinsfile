@@ -1,18 +1,18 @@
 pipeline {
     agent any
-	node {
-	stage('SCM') {
-		checkout scm
-	}
-	stage('SonarQube Analysis') {
-		def scannerHome = tool 'sonar-scanner-main';
-		withSonarQubeEnv(installationName: 'sq-main') {
-		sh "${scannerHome}/bin/sonar-scanner"
-		}
-	}
-	}
 
     stages {
+		node {
+		stage('SCM') {
+			checkout scm
+		}
+		stage('SonarQube Analysis') {
+			def scannerHome = tool 'sonar-scanner-main';
+			withSonarQubeEnv(installationName: 'sq-main') {
+			sh "${scannerHome}/bin/sonar-scanner"
+			}
+		}
+		}
         stage('Dependencies') {
             steps {
                 echo 'Retrieving dependencies..'
