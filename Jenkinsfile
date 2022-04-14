@@ -1,5 +1,16 @@
 pipeline {
     agent any
+	node {
+	stage('SCM') {
+		checkout scm
+	}
+	stage('SonarQube Analysis') {
+		def scannerHome = tool 'sonar-scanner-main';
+		withSonarQubeEnv(installationName: 'sq-main') {
+		sh "${scannerHome}/bin/sonar-scanner"
+		}
+	}
+	}
 
     stages {
         stage('Dependencies') {
@@ -9,15 +20,15 @@ pipeline {
                 echo 'Installation completed successfully.'
             }
         }
-		stage('SonarQube Analysis') {
-			steps { 
-				withSonarQubeEnv(installationName: 'sonarqube-main') {
-					echo 'Running SonarQube analysis..'
-					sh 'sonar-scanner'
-					echo 'SonarQube analysis completed successfully.'
-				}
-			}		
-		}
+		// stage('SonarQube Analysis') {
+		// 	steps { 
+		// 		withSonarQubeEnv(installationName: 'sonarqube-main') {
+		// 			echo 'Running SonarQube analysis..'
+		// 			sh 'sonar-scanner'
+		// 			echo 'SonarQube analysis completed successfully.'
+		// 		}
+		// 	}		
+		// }
         stage('Build') {
             steps {
                 echo 'Building project..'
