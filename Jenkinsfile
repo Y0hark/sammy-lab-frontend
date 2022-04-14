@@ -32,7 +32,8 @@ pipeline {
 				sh 'sudo cp -r dist/* /home/yohark/workspace/firebase_projects/sammy-lab/public/'
 				echo 'Success'
 				echo 'Deploying files to firebase...'
-				sh 'cd /home/yohark/workspace/firebase_projects/sammy-lab/ && firebase deploy'
+				sh 'cd /home/yohark/workspace/firebase_projects/sammy-lab/'
+				sh 'firebase deploy'
 				echo 'Done!'
             }
         }
