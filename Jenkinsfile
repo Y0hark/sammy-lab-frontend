@@ -3,9 +3,8 @@ pipeline {
 
     stages {
 		stage('SonarQube Analysis') {
-			def scannerHome = tool 'sonar-scanner-main';
 			withSonarQubeEnv(installationName: 'sq-main') {
-			sh "${scannerHome}/bin/sonar-scanner"
+			sh "sonar-scanner-main/bin/sonar-scanner"
 			}
 		}
         stage('Dependencies') {
