@@ -17,11 +17,15 @@ pipeline {
             }
         }
 		stage('SonarQube Analysis') {
-			steps { 
-				withSonarQubeEnv(installationName: 'sonarqube-main', credentialsId: 'SONARQUBE_TOKEN') {
-					sh "npm run build"	
-				}
-			}		
+			def scannerHome = tool 'sonarqube-main';
+    		withSonarQubeEnv() {
+				sh "${scannerHome}/bin/sonar-scanner"
+			}
+			// steps { 
+			// 	withSonarQubeEnv(installationName: 'sonarqube-main', credentialsId: 'SONARQUBE_TOKEN') {
+			// 		sh "npm run build"	
+			// 	}
+			// }		
 		}
         stage('Test') {
             steps {
