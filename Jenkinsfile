@@ -9,13 +9,6 @@ pipeline {
                 echo 'Installation completed successfully.'
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Building project..'
-				sh 'npm run build'
-                echo 'Build completed successfully.'
-            }
-        }
 		stage('SonarQube Analysis') {
 			steps { 
 				withSonarQubeEnv(installationName: 'sonarqube-main') {
@@ -25,6 +18,13 @@ pipeline {
 				}
 			}		
 		}
+        stage('Build') {
+            steps {
+                echo 'Building project..'
+				sh 'npm run build'
+                echo 'Build completed successfully.'
+            }
+        }
         stage('Test') {
             steps {
                 echo 'Testing..'
