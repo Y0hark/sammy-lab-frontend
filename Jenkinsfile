@@ -32,7 +32,7 @@ pipeline {
 				sh 'sudo cp -r dist/* /home/yohark/workspace/firebase_projects/sammy-lab/public/'
 				echo 'Success'
 				echo 'Deploying files to firebase...'
-				sh 'sudo cd /home/yohark/workspace/firebase_projects/sammy-lab/public/ && firebase deploy'
+				sh 'cd /home/yohark/workspace/firebase_projects/sammy-lab/public/ && sudo firebase deploy'
 				echo 'Done!'
             }
         }
