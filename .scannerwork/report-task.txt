@@ -1,0 +1,6 @@
+projectKey=sammylab-frontend
+serverUrl=http://yohark.de:1600
+serverVersion=9.4.0.54424
+dashboardUrl=http://yohark.de:1600/dashboard?id=sammylab-frontend
+ceTaskId=AYAomcXJ-6P58jdIWJgy
+ceTaskUrl=http://yohark.de:1600/api/ce/task?id=AYAomcXJ-6P58jdIWJgy
