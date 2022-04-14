@@ -8,6 +8,7 @@ pipeline {
 				sh 'npm install'
                 echo 'Installation completed successfully.'
             }
+        }
 		stage('SonarQube Analysis') {
 			steps {
 				withSonarQubeEnv(installationName: 'sq-main') {
@@ -15,7 +16,6 @@ pipeline {
 				}
 			}
 		}
-        }
 		// stage('SonarQube Analysis') {
 		// 	steps { 
 		// 		withSonarQubeEnv(installationName: 'sonarqube-main') {
