@@ -16,6 +16,12 @@ pipeline {
                 echo 'Build completed successfully.'
             }
         }
+		stage('SonarQube Analysis') {
+			def scannerHome = tool 'sonarqube-main';
+			withSonarQubeEnv() {
+				sh "${scannerHome}/bin/sonar-scanner"
+			}
+		}
         stage('Test') {
             steps {
                 echo 'Testing..'
