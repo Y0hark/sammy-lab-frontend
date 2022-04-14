@@ -3,7 +3,9 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
-
+  server: {
+	  port: 4500
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
@@ -24,6 +26,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+	  '~/assets/css/global.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -76,13 +79,13 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          primary: '#324B4E',
+          accent: '#4AB1BE',
+          secondary: '#3E8C78',
+          info: '#A89CD1',
+          warning: '#FF8C40',
+          error: '#A33F00',
+          success: '#56BF80'
         }
       }
     }

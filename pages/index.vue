@@ -1,18 +1,10 @@
 <template>
-	<v-container class=".col-md-6 .offset-md-3">
-		<v-row no-gutters>
-			<v-col
-				md="6"
-				offset-md="3"
-			>
-				<h1 align="center" class="mt-10">{{ homepage.title }}</h1>
-				<br>
+	<div>
+		<h1 align="center" class="mt-10 text-h1">{{ homepage.title }}</h1>
+		<br />
 
-			<ComponentViewer :content="homepage.content" />
-
-			</v-col>
-		</v-row>
-	</v-container>
+		<ComponentViewer :content="homepage.content" />
+	</div>
 </template>
 <script>
 import ComponentViewer from '../components/ComponentViewer.vue'
@@ -33,7 +25,9 @@ export default {
 		try {
 			this.homepage = (await getHomepagePromise()).data
 		} catch (error) {
-			console.error(`Couldn't get homepage content. Got this error: ${error}`)
+			console.error(
+				`Couldn't get homepage content. Got this error: ${error}`
+			)
 		}
 	},
 }
