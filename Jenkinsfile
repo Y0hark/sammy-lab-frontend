@@ -10,23 +10,14 @@ pipeline {
             }
         }
 		stage('SonarQube analysis') {
-				steps {
-					echo 'Running SonarQube analysis..'
-					withSonarQubeEnv('sq-main') { 
-						sh "/home/yohark/utils/sonarscanner/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner"
-					}
-					echo 'SonarQube analysis completed successfully.'
+			steps {
+				echo 'Running SonarQube analysis..'
+				withSonarQubeEnv('sq-main') { 
+					sh "/home/yohark/utils/sonarscanner/sonar-scanner-4.7.0.2747-linux/bin/sonar-scanner"
 				}
+				echo 'SonarQube analysis completed successfully.'
 			}
-		// stage('SonarQube Analysis') {
-		// 	steps { 
-		// 		withSonarQubeEnv(installationName: 'sonarqube-main') {
-		// 			echo 'Running SonarQube analysis..'
-		// 			sh 'sonar-scanner'
-		// 			echo 'SonarQube analysis completed successfully.'
-		// 		}
-		// 	}		
-		// }
+		}
         stage('Build') {
             steps {
                 echo 'Building project..'
