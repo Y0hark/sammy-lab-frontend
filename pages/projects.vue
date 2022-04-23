@@ -23,7 +23,13 @@
 							{{ project.title }}
 						</div>
 						<div v-if="project.cover" class="mb-1">
-							{{ project.cover }}
+							<img
+								:src="project.cover.url"
+								:alt="project.title"
+								:title="project.title"
+								height="180"
+								class="img-fluid"
+							/>
 						</div>
 						<div class="mb-1">
 							{{ project.description }}
@@ -54,7 +60,7 @@
 							<v-btn
 								v-if="project.article"
 								color="primary"
-								:to="project.article"
+								:to="'articles/' + project.article.slug"
 								>Read more</v-btn
 							>
 						</div>
