@@ -29,7 +29,7 @@ export default {
 		readableDate(date) {
 			date = new Date(date)
 			return (
-				date.getDay() +
+				date.getUTCDay() +
 				' ' +
 				date.toLocaleString('default', { month: 'long' })
 			)

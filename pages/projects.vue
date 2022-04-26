@@ -49,19 +49,22 @@
 								v-if="project.link"
 								color="primary"
 								:to="project.link"
-								>{{ project.title }}</v-btn
+								class="ma-1"
+								>Le projet</v-btn
 							>
 							<v-btn
 								v-if="project.git"
 								color="primary"
+								class="ma-1"
 								:to="project.git"
 								>GitHub</v-btn
 							>
 							<v-btn
 								v-if="project.article"
 								color="primary"
+								class="ma-1"
 								:to="'articles/' + project.article.slug"
-								>Read more</v-btn
+								>En savoir +</v-btn
 							>
 						</div>
 					</v-card-text>
