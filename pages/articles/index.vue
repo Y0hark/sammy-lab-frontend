@@ -48,7 +48,6 @@ export default {
 			articles: [],
 			flag: 'all',
 			toggleCat: [],
-			articles_by_year: [],
 		}
 	},
 	methods: {
@@ -64,6 +63,13 @@ export default {
 	async mounted() {
 		// retrieving data from api
 		this.articles = (await Api.getArticles()).data
+		// sorting articles by newest so my articles are displayed in the right order
+		// the articles_to_display function that will push the top articles to the end of the array
+		// first to go first to be displayed
+		this.articles.sort(
+			(a, b) =>
+				new Date(b.publication_date) - new Date(a.publication_date)
+		)
 		this.categories = (await Api.getCategories()).data
 	},
 	computed: {
