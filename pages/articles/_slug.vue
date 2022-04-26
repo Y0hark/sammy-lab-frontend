@@ -1,14 +1,10 @@
 <template>
 	<v-container>
 		<v-row no-gutters>
-			<v-col
-				lg="8"
-				offset-lg="2"
-				xl="6"
-				offset-xl="3"
-			>
+			<v-col lg="8" offset-lg="2" xl="6" offset-xl="3">
 				<v-card-text class="mt-16" align="center">
-					Écrit par <span>{{ writer }}</span> le <span>{{ article.publication_date }}</span>
+					Écrit par <span>{{ writer }}</span> le
+					<span>{{ readableDate(article.publication_date) }}</span>
 				</v-card-text>
 				<ComponentViewer :content="article.content" />
 			</v-col>
@@ -35,11 +31,10 @@ export default {
 	},
 	async mounted() {
 		try {
-			const article = (
-				await getArticlePromise(this.$route.params.slug)
-			).data[0]
+			const article = (await getArticlePromise(this.$route.params.slug))
+				.data[0]
 			this.category = article.category.name
-			this.writer = article.writer.name + " " + article.writer.surname
+			this.writer = article.writer.name + ' ' + article.writer.surname
 			this.loading = false
 			this.article = article
 		} catch (error) {
@@ -47,6 +42,18 @@ export default {
 				'Impossible to get the article. Got this error: ' + error
 			)
 		}
+	},
+	methods: {
+		readableDate(date) {
+			date = new Date(date)
+			return (
+				date.getDate() +
+				' ' +
+				date.toLocaleString('default', { month: 'long' }) +
+				' ' +
+				date.getFullYear()
+			)
+		},
 	},
 }
 </script>
