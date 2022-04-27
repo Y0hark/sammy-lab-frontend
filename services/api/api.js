@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const BASE_URL = 'https://yohark.de/sammylab/'
+export const BASE_URL = 'http://yohark.de:1338/'
 
 class Http {
 	constructor() {}

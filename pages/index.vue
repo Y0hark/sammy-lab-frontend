@@ -1,11 +1,18 @@
 <template>
 	<div>
-		<h1 align="center" class="mt-10 text-h1">{{ homepage.title }}</h1>
+		<h1 align="center" class="mt-10 text-h1">
+			{{ homepage.title }}
+		</h1>
 		<br />
 
 		<ComponentViewer :content="homepage.content" />
 
-		<Tweet v-for="(tweet, index) in tweets" :key="index" :tweet="tweet" />
+		<Tweet
+			v-for="(tweet, index) in tweets"
+			:key="index"
+			:tweet="tweet"
+			align="center"
+		/>
 	</div>
 </template>
 <script>
