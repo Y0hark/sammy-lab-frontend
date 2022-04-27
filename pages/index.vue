@@ -4,26 +4,27 @@
 		<br />
 
 		<ComponentViewer :content="homepage.content" />
+
+		<Tweet v-for="(tweet, index) in tweets" :key="index" :tweet="tweet" />
 	</div>
 </template>
 <script>
 import ComponentViewer from '../components/ComponentViewer.vue'
+import Tweet from '../components/Tweet.vue'
 import Api from '../services/api/api'
 
-async function getHomepagePromise() {
-	return await Api.getHomePage()
-}
-
 export default {
-	components: { ComponentViewer },
+	components: { ComponentViewer, Tweet },
 	data() {
 		return {
 			homepage: {},
+			tweets: [],
 		}
 	},
 	async mounted() {
 		try {
-			this.homepage = (await getHomepagePromise()).data
+			this.homepage = (await Api.getHomePage()).data
+			this.tweets = (await Api.getTweets()).data
 		} catch (error) {
 			console.error(
 				`Couldn't get homepage content. Got this error: ${error}`
