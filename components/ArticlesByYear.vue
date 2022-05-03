@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2 class="secondary--text">{{ year }}</h2>
+		<h2 class="primary--text">{{ year }}</h2>
 		<v-divider class="mb-2"></v-divider>
 		<v-btn
 			class="no-uppercase"

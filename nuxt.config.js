@@ -79,13 +79,13 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: '#324B4E',
-          accent: '#4AB1BE',
-          secondary: '#3E8C78',
-          info: '#A89CD1',
-          warning: '#FF8C40',
-          error: '#A33F00',
-          success: '#56BF80'
+          primary: '#C99319',
+          accent: '#00B8A1',
+          secondary: '#00816E',
+          info: '#C1554E',
+          warning: '#784330',
+          error: '#A52A3E',
+          success: '#007D4E'
         }
       }
     }

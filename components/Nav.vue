@@ -2,7 +2,7 @@
 	<div>
 		<v-toolbar>
 			<v-toolbar-title>
-				<v-btn to="/" text class="accent--text">Sammy's Lab</v-btn>
+				<v-btn to="/" text class="primary--text">Sammy's Lab</v-btn>
 			</v-toolbar-title>
 
 			<v-spacer></v-spacer>
@@ -22,7 +22,9 @@
 							class="mr-1"
 							:src="require(`~/assets/images/${item.icon}.png`)"
 						/>
-						<span class="d-md-flex">{{ item.name }}</span>
+						<span class="d-md-flex primary--text">{{
+							item.name
+						}}</span>
 					</v-btn>
 				</template>
 				<span>{{ item.tooltip }}</span>
