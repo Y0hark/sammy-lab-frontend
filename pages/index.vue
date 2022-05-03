@@ -7,6 +7,7 @@
 
 		<ComponentViewer :content="homepage.content" />
 
+		<h2 align="center" class="mt-10">Les petites infos</h2>
 		<Tweet
 			v-for="(tweet, index) in tweets"
 			:key="index"

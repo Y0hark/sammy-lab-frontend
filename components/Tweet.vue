@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<v-card class="ma-2" max-width="50vw">
+		<v-card class="ma-2" max-width="30vw">
 			<v-card-title primary-title>
 				{{ tweet.title }}
 			</v-card-title>
