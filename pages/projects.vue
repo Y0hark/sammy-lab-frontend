@@ -16,7 +16,6 @@
 				xl="6"
 				align="center"
 			>
-				<!-- TODO - Samuel GALIERE : need CSS on these lines to get to a better overall view of the project -->
 				<v-card>
 					<v-card-text>
 						<div class="text-h4 primary--text">
@@ -35,7 +34,6 @@
 							{{ project.description }}
 						</div>
 						<div class="mb-1">
-							<!-- TODO - Samuel GALIERE : Need CSS to make tags and links look better -->
 							<span
 								v-for="tag in project.tags"
 								:key="tag.id"
@@ -50,7 +48,6 @@
 							</span>
 						</div>
 						<div>
-							<!-- TODO - Samuel GALIERE : Need CSS to make tags and links look better -->
 							<v-btn
 								v-if="project.link"
 								color="info"
