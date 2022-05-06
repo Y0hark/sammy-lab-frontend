@@ -34,7 +34,7 @@
 
 			<v-tooltip v-for="item in menuIcons" :key="item.name" bottom>
 				<template v-slot:activator="{ on, attrs }">
-					<v-btn
+					<!-- //NOSONAR --><v-btn
 						:href="item.link"
 						v-bind="attrs"
 						v-on="on"
