@@ -16,10 +16,9 @@
 				xl="6"
 				align="center"
 			>
-				<!-- TODO - Samuel GALIERE : need CSS on these lines to get to a better overall view of the project -->
 				<v-card>
 					<v-card-text>
-						<div class="text-h6 secondary--text">
+						<div class="text-h4 primary--text">
 							{{ project.title }}
 						</div>
 						<div v-if="project.cover" class="mb-1">
@@ -35,33 +34,37 @@
 							{{ project.description }}
 						</div>
 						<div class="mb-1">
-							<!-- TODO - Samuel GALIERE : Need CSS to make tags and links look better -->
 							<span
 								v-for="tag in project.tags"
 								:key="tag.id"
-								class="tag ml-1 mr-1 d-inline-block"
+								class="
+									tag
+									ml-1
+									mr-1
+									d-inline-block
+									accent--text
+								"
 								>{{ tag.name }}
 							</span>
 						</div>
 						<div>
-							<!-- TODO - Samuel GALIERE : Need CSS to make tags and links look better -->
 							<v-btn
 								v-if="project.link"
-								color="primary"
+								color="info"
 								:to="project.link"
 								class="ma-1"
 								>Le projet</v-btn
 							>
 							<v-btn
 								v-if="project.git"
-								color="primary"
+								color="info"
 								class="ma-1"
 								:to="project.git"
 								>GitHub</v-btn
 							>
 							<v-btn
 								v-if="project.article"
-								color="primary"
+								color="info"
 								class="ma-1"
 								:to="'articles/' + project.article.slug"
 								>En savoir +</v-btn

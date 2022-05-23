@@ -19,7 +19,7 @@
 				<v-btn
 					v-for="(category, index) in categories"
 					:key="index"
-					class="secondary--text text-h6 text-capitalize rounded"
+					class="accent--text text-h6 text-capitalize rounded"
 					@click="sortArticles(category.name)"
 				>
 					{{ category.name }}

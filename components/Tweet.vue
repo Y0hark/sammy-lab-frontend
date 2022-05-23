@@ -4,7 +4,8 @@
 			<v-card-title primary-title>
 				{{ tweet.title }}
 			</v-card-title>
-			<v-card-text align="start" v-html="tweet.copy"> </v-card-text>
+			<!-- //NOSONAR --><v-card-text align="start" v-html="tweet.copy">
+			</v-card-text>
 		</v-card>
 	</div>
 </template>

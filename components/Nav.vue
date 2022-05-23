@@ -2,7 +2,7 @@
 	<div>
 		<v-toolbar class="d-none d-sm-block">
 			<v-toolbar-title>
-				<v-btn to="/" text class="accent--text">Sammy's Lab</v-btn>
+				<v-btn to="/" text class="primary--text">Sammy's Lab</v-btn>
 			</v-toolbar-title>
 
 			<v-spacer></v-spacer>
@@ -22,7 +22,9 @@
 							class="mr-1"
 							:src="require(`~/assets/images/${item.icon}.png`)"
 						/>
-						<span class="d-none d-md-flex">{{ item.name }}</span>
+						<span class="d-none d-md-flex primary--text">{{
+							item.name
+						}}</span>
 					</v-btn>
 				</template>
 				<span>{{ item.tooltip }}</span>
@@ -32,7 +34,7 @@
 
 			<v-tooltip v-for="item in menuIcons" :key="item.name" bottom>
 				<template v-slot:activator="{ on, attrs }">
-					<v-btn
+					<!-- //NOSONAR --><v-btn
 						:href="item.link"
 						v-bind="attrs"
 						v-on="on"
