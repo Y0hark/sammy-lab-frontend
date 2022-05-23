@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<v-toolbar>
+		<v-toolbar class="d-none d-sm-block">
 			<v-toolbar-title>
 				<v-btn to="/" text class="accent--text">Sammy's Lab</v-btn>
 			</v-toolbar-title>
@@ -22,7 +22,7 @@
 							class="mr-1"
 							:src="require(`~/assets/images/${item.icon}.png`)"
 						/>
-						<span class="d-md-flex">{{ item.name }}</span>
+						<span class="d-none d-md-flex">{{ item.name }}</span>
 					</v-btn>
 				</template>
 				<span>{{ item.tooltip }}</span>
@@ -50,12 +50,42 @@
 				<span>{{ item.tooltip }}</span>
 			</v-tooltip>
 		</v-toolbar>
+		<v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+		<v-navigation-drawer v-model="drawer" absolute temporary>
+			<v-list nav dense>
+				<v-list-item-group
+					active-class="deep-purple--text text--accent-4"
+				>
+					<v-list-item v-for="item in menuItems" :key="item.name">
+						<v-btn
+							nuxt
+							:to="item.link"
+							v-bind="attrs"
+							elevation="0"
+							class="ma-2"
+							x-large
+						>
+							<v-img
+								width="25px"
+								height="auto"
+								class="mr-1"
+								:src="
+									require(`~/assets/images/${item.icon}.png`)
+								"
+							/>
+							<span>{{ item.name }}</span>
+						</v-btn>
+					</v-list-item>
+				</v-list-item-group>
+			</v-list>
+		</v-navigation-drawer>
 	</div>
 </template>
 <script>
 export default {
 	data() {
 		return {
+			drawer: false,
 			menuItems: [
 				{
 					name: 'Articles',

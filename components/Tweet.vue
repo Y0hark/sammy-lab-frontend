@@ -1,10 +1,10 @@
 <template>
 	<div>
-		<v-card class="ma-2" max-width="50vw">
+		<v-card class="ma-2 pl-10 pr-10">
 			<v-card-title primary-title>
 				{{ tweet.title }}
 			</v-card-title>
-			<v-card-text v-html="tweet.copy"> </v-card-text>
+			<v-card-text align="start" v-html="tweet.copy"> </v-card-text>
 		</v-card>
 	</div>
 </template>

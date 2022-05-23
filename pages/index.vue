@@ -7,12 +7,13 @@
 
 		<ComponentViewer :content="homepage.content" />
 
-		<Tweet
-			v-for="(tweet, index) in tweets"
-			:key="index"
-			:tweet="tweet"
-			align="center"
-		/>
+		<v-carousel hide-delimiters height="auto">
+			<v-carousel-item v-for="tweet in tweets" :key="tweet.id">
+				<template>
+					<Tweet :tweet="tweet" />
+				</template>
+			</v-carousel-item>
+		</v-carousel>
 	</div>
 </template>
 <script>
